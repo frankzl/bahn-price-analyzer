@@ -34,6 +34,7 @@ const csvWriter = createCsvWriter({
     {id: 'stops', title: 'stops'}                  ,
     {id: 'price', title: 'price'}                  ,
     {id: 'tickettype', title: 'tickettype'}        ,
+    {id: 'fulltxt', title: 'fulltxt'}        ,
     ]
 });
 
@@ -76,6 +77,7 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
                     stops: route.legs.length,
                     price: route.price.amount,
                     tickettype: route.price.name,
+                    fulltxt: encodeURI(JSON.stringify(route))
                 }
             })
             const tomorrow = from_date;

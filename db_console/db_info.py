@@ -8,9 +8,20 @@ import numpy as numpy
 import pprint
 from Naked.toolshed.shell import execute_js, muterun_js
 from analysis import *
+import pandas as pd
+import sys
 
+def get_station_id(station_name):
+    df = pd.read_csv('../stations.csv')
+    stations = dict(zip(list(df.name.str.upper()),list(df.id)))
+    try:
+        st_id = stations[station_name.upper()]
+        return str(st_id)
+    except Exception as e:
+        print('{0} Please enter a valid station!'.format(station_name))
+        sys.exit()
 def send_request(args):
-    args_req =     args = '-f '+' '.join(args.from_d) + ' -t '+' '.join(args.to) + ' -s '+args.from_date + ' -e '+args.to_date
+    args_req =     args = '-f '+get_station_id(' '.join(args.from_d)) + ' -t '+get_station_id(' '.join(args.to)) + ' -s '+args.from_date + ' -e '+args.to_date
     request = '../scraper.js '+args_req
     print(request)
     result = execute_js(request)

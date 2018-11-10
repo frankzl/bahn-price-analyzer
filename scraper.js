@@ -4,8 +4,6 @@ const moment = require('moment-timezone')
 const {inspect} = require('util')
 
 const tz = 'Europe/Berlin'
-// some monday in the future
-const when = moment.tz(Date.now(), tz).hour(0).minute(0).second(0).day(1 + 7).toDate()
 
 /*
 prices('8000105', '8011160', when)
@@ -62,7 +60,11 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
             return
         }
 
-    const when = moment.tz(day.getTime(), tz).hour(0).minute(0).second(0).day(1 + 7).toDate()
+    const when = moment.tz(day.getTime(), tz).hour(0).minute(0).second(0).day(day.getDay()).toDate()
+    console.log(when.getDate())
+    console.log(when.getMonth())
+    console.log(when.getFullYear())
+    console.log("------------")
 
         prices(from_id, to_id, when)
         .then((routes) => {

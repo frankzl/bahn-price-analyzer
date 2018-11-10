@@ -388,6 +388,7 @@
 { name: "Beringstedt", id: 8000905},
 { name: "Bergisch Gladbach", id: 8000899},
 { name: "Berkenbrück", id: 8011154},
+{ name: "Berlin Hbf", id: 8098160},
 { name: "Berlin Anhalter Bahnhof", id: 8089002},
 { name: "Greifswalder Straße", id: 8089011},
 { name: "Berlin Frankfurter Allee", id: 8089013},

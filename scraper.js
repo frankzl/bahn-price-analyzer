@@ -49,25 +49,27 @@ const dateToInt = function(date){
 
 const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
 
-    const end = to_date
-        const day = from_date
+    const end = to_date;
+    const day = from_date;
 
-        if(end.getTime() < day.getTime()){
-            console.log(prev_routes)
-            writeDict( prev_routes)
-            return
-        }
+    if(end.getTime() < day.getTime()){
+        console.log(prev_routes);
+        writeDict( prev_routes);
+        return;
+    }
 
-    const when = moment.tz(day.getTime(), tz).hour(0).minute(0).second(0).day(day.getDay()).toDate()
-    console.log(when.getDate())
-    console.log(when.getMonth())
-    console.log(when.getFullYear())
-    console.log("------------")
+    const when = moment.tz(day.getTime(), tz).hour(0).minute(0).second(0).day(day.getDay()).toDate();
+    console.log("------------");
+    console.log(from_id);
+    console.log(to_id);
+    console.log(when);
 
-        prices(from_id, to_id, when)
+    prices(from_id, to_id, when)
         .then((routes) => {
             // console.log(inspect(routes, {depth: null}))
-
+            console.log(dateToInt(from_date) );
+            console.log("routes: ")
+            console.log( routes );
             routes = routes.map( (route) => {
                 return {
                     date: dateToInt(from_date),
@@ -78,25 +80,24 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
                     tickettype: route.price.name,
                 }
             })
-            const tomorrow = from_date
-                tomorrow.setDate(tomorrow.getDate() + 1);
-            getData( from_id, to_id, tomorrow, to_date, prev_routes.concat(routes))
+            const tomorrow = from_date;
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            getData( from_id, to_id, tomorrow, to_date, prev_routes.concat(routes));
         })
     .catch((err) => {
-        console.error(err)
-            process.exit(1)
+        console.error(err);
+        process.exit(1)
     })
 
 }
 
-
-getData(8098160, 8000105, new Date("2018-11-18"), new Date("2018-11-19"), [])
+//getData(8098160, 8000105, new Date("2018-11-18"), new Date("2018-11-19"), [])
 
 
 const argv = require('minimist')(process.argv.slice(2));
 console.dir(argv);
 
-getData(argv.f, argv.t, new Date(argv.s), new Date(argv.e), [])
+getData(argv.f, argv.t, new Date(argv.s), new Date(argv.e), []);
 
 
 

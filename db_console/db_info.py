@@ -10,9 +10,10 @@ from Naked.toolshed.shell import execute_js, muterun_js
 from analysis import *
 import pandas as pd
 import sys
-
+import os
+#comment
 def get_station_id(station_name):
-    df = pd.read_csv('../stations.csv')
+    df = pd.read_csv(os.path.join(os.getcwd(), "stations.csv"))
     stations = dict(zip(list(df.name.str.upper()),list(df.id)))
     try:
         st_id = stations[station_name.upper()]
@@ -27,7 +28,7 @@ def send_request(args):
     result = execute_js(request)
     #result = True
     if result:
-        return '../data.csv'
+        return '/tmp/db-price-analysis/data.csv'
     else:
         return None
 

@@ -1,4 +1,7 @@
 date,departure_time,arrival_time,stops,price,tickettype
+<<<<<<< HEAD
+
+=======
 20181110,2018-11-10T21:30:00.000Z,2018-11-11T07:25:00.000Z,5,77.9,Super Sparpreis
 20181110,2018-11-10T21:46:00.000Z,2018-11-11T07:25:00.000Z,6,109.9,Super Sparpreis
 20181111,2018-11-11T02:30:00.000Z,2018-11-11T09:53:00.000Z,3,59.9,Super Sparpreis
@@ -130,3 +133,4 @@ date,departure_time,arrival_time,stops,price,tickettype
 20181115,2018-11-15T21:30:00.000Z,2018-11-16T07:25:00.000Z,4,53.9,Super Sparpreis
 20181115,2018-11-15T21:46:00.000Z,2018-11-16T06:25:00.000Z,6,67.9,Super Sparpreis
 20181115,2018-11-15T21:46:00.000Z,2018-11-16T07:25:00.000Z,5,59.9,Super Sparpreis
+>>>>>>> a2fd5c87db739574e21ef4aff7f76babe28ef765

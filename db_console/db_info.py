@@ -14,6 +14,7 @@ def send_request(args):
     request = '../scraper.js '+args_req
     print(request)
     result = execute_js(request)
+    #result = True
     if result:
         return '../data.csv'
     else:
@@ -32,6 +33,7 @@ if __name__ == "__main__":
 
     if response is not None:
         #call analyzer()
+        print('Trains between {0} ---> {1}\n'.format(' '.join(args.from_d), ' '.join(args.to)))
         result = analyze(response)
     else:
         print('Error fetching Data...')

@@ -1,7 +1,6 @@
 import pandas as pd
 from termgraph_api.termgraph import *
 
-import matplotlib.pyplot as plt
 import datetime
 
 
@@ -23,7 +22,4 @@ def analyze(filename):
 
     print('\n')
     #plt.show()s
-
-    if __name__ is '__main__':
-        print('here')
-        analyze('data.csv')
+    return True

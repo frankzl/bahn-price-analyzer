@@ -1,3 +1,8 @@
+const mkdirp = require('mkdirp');
+const path = '/tmp/db-price-analysis'
+mkdirp ( path, function(err) { 
+});
+
 const prices = require('db-prices')
 
 const moment = require('moment-timezone')
@@ -17,12 +22,11 @@ prices('8000105', '8011160', when)
 */
 
 const homedir = require('os').homedir();
-console.log(homedir)
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 const csvWriter = createCsvWriter({
-    path: 'data.csv',
+    path: path + '/data.csv',
     header: [
     {id: 'date', title: 'date'},
     {id: 'departure_time', title: 'departure_time'},
@@ -36,7 +40,7 @@ const csvWriter = createCsvWriter({
 const writeDict = ( records ) => {
     csvWriter.writeRecords(records)       // returns a promise
         .then(() => {
-            console.log('...Done');
+            //console.log('...Done');
         });
 }
 const dateToInt = function(date){
@@ -89,7 +93,7 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
 
 
 const argv = require('minimist')(process.argv.slice(2));
-console.dir(argv);
+// console.dir(argv);
 
 getData(argv.f, argv.t, new Date(argv.s), new Date(argv.e), []);
 

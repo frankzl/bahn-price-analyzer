@@ -22,9 +22,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: 'data.csv',
     header: [
-    {id: 'year', title: 'year'},
-    {id: 'month', title: 'month'},
-    {id: 'day', title: 'day'},
+    {id: 'date', title: 'date'},
     {id: 'departure_time', title: 'departure_time'},
     {id: 'arrival_time', title: 'arrival_time'}    ,
     {id: 'stops', title: 'stops'}                  ,
@@ -72,9 +70,7 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
 
             routes = routes.map( (route) => {
                 return {
-                    day: from_date.getDate(),
-                    month: from_date.getMonth()+1,
-                    year: from_date.getFullYear(),
+                    date: dateToInt(from_date),
                     departure_time: route.legs[0].departure,
                     arrival_time: route.legs[route.legs.length - 1].arrival,
                     stops: route.legs.length,
@@ -92,11 +88,15 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
     })
 
 }
+
+
 getData(8098160, 8000105, new Date("2018-11-18"), new Date("2018-11-19"), [])
 
 
 const argv = require('minimist')(process.argv.slice(2));
 console.dir(argv);
+
+getData(argv.f, argv.t, new Date(argv.s), new Date(argv.e), [])
 
 
 

@@ -13,7 +13,8 @@ import sys
 import os
 #comment
 def get_station_id(station_name):
-    df = pd.read_csv(os.path.join(os.getcwd(), "stations.csv"))
+    path = os.path.dirname(os.path.realpath(__file__))
+    df = pd.read_csv(os.path.join(path, "../stations.csv"))
     stations = dict(zip(list(df.name.str.upper()),list(df.id)))
     try:
         st_id = stations[station_name.upper()]
@@ -23,7 +24,8 @@ def get_station_id(station_name):
         sys.exit()
 def send_request(args):
     args_req =     args = '-f '+get_station_id(' '.join(args.from_d)) + ' -t '+get_station_id(' '.join(args.to)) + ' -s '+args.from_date + ' -e '+args.to_date
-    request = '../scraper.js '+args_req
+    script = (os.path.dirname(os.path.realpath(__file__)) + "/../scraper.js")
+    request = script + ' '+args_req
     print(request)
     result = execute_js(request)
     #result = True

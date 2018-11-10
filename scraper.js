@@ -17,8 +17,12 @@ prices('8000105', '8011160', when)
     })
 */
 
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
 const stations = require('db-stations')
 
 stations()
-    .on('data', (data)=>{console.log(data})
+    .on('data', function(data){
+		console.log("{ name: \"" + data.name + "\", id: "+data.id + "},")
+    })
     .on('error', console.error)

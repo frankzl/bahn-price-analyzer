@@ -1,0 +1,22 @@
+{
+  "name": "bahn-price-analyzer",
+  "version": "1.0.0",
+  "description": "Analyzing the prices of the Deutsche Bahn (based on juliuste's project)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankzl/bahn-price-analyzer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankzl/bahn-price-analyzer/issues"
+  },
+  "homepage": "https://github.com/frankzl/bahn-price-analyzer#readme",
+  "dependencies": {
+    "db-prices": "^3.0.1"
+  }
+}

@@ -2,7 +2,7 @@
 Analyzing the prices of the Deutsche Bahn (based on juliuste's project)
 
 # Node script
-execute with `node scrapper.js -f from_station -t to_station -start_time start_date -end_time end_date`
+execute with `node scrapper.js -f from_station -t to_station -s start_date -e end_date`
  will write data into file: 
 
 `data.csv`

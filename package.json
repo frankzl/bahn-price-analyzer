@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/frankzl/bahn-price-analyzer#readme",
   "dependencies": {
-    "db-prices": "^3.0.1"
+    "db-prices": "^3.0.1",
+    "db-stations": "^2.9.0"
   }
 }

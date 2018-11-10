@@ -16,6 +16,8 @@ prices('8000105', '8011160', when)
     })
 */
 
+const homedir = require('os').homedir();
+console.log(homedir)
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
@@ -53,23 +55,15 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
     const day = from_date;
 
     if(end.getTime() < day.getTime()){
-        console.log(prev_routes);
         writeDict( prev_routes);
         return;
     }
 
     const when = moment.tz(day.getTime(), tz).hour(0).minute(0).second(0).day(day.getDay()).toDate();
-    console.log("------------");
-    console.log(from_id);
-    console.log(to_id);
-    console.log(when);
 
     prices(from_id, to_id, when)
         .then((routes) => {
             // console.log(inspect(routes, {depth: null}))
-            console.log(dateToInt(from_date) );
-            console.log("routes: ")
-            console.log( routes );
             routes = routes.map( (route) => {
                 return {
                     date: dateToInt(from_date),

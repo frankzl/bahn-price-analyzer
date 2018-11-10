@@ -20,6 +20,7 @@
     "csv-writer": "^1.2.0",
     "db-prices": "^3.0.1",
     "db-stations": "^2.9.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "os": "^0.1.1"
   }
 }

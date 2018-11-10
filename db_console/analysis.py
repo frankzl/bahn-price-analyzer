@@ -5,6 +5,12 @@ import datetime
 import sys
 from pprint import pprint
 
+def custom_min(data):
+    print("-----")
+    idx = data["price"].idxmin()
+    print(data.loc[idx])
+    return data.loc[idx]
+
 def analyze(filename):
     df = pd.read_csv(filename)
     base_url = 'https://link.bahn.guru/?journey='
@@ -12,7 +18,9 @@ def analyze(filename):
 
 
     df['departure_time'] = pd.to_datetime(df['departure_time'])
-    grouped = df.groupby(df['date']).min()
+    # grouped = df.groupby(df['date']).min()
+    grouped = df.groupby( df['date']).apply(custom_min)
+    print(grouped)
 
     url_list = list(grouped['fulltxt'])
     pprint(grouped['fulltxt'])

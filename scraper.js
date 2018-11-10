@@ -24,7 +24,9 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: 'data.csv',
     header: [
-    {id: 'date', title: 'date'},
+    {id: 'year', title: 'year'},
+    {id: 'month', title: 'month'},
+    {id: 'day', title: 'day'},
     {id: 'departure_time', title: 'departure_time'},
     {id: 'arrival_time', title: 'arrival_time'}    ,
     {id: 'stops', title: 'stops'}                  ,
@@ -68,7 +70,9 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
 
             routes = routes.map( (route) => {
                 return {
-                    date: dateToInt(from_date),
+                    day: from_date.getDate(),
+                    month: from_date.getMonth()+1,
+                    year: from_date.getFullYear(),
                     departure_time: route.legs[0].departure,
                     arrival_time: route.legs[route.legs.length - 1].arrival,
                     stops: route.legs.length,

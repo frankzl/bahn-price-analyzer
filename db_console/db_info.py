@@ -7,10 +7,11 @@ import argparse
 import numpy as numpy
 import pprint
 from Naked.toolshed.shell import execute_js, muterun_js
+from analysis import *
 
 def send_request(args):
     args_req =     args = '-f '+' '.join(args.from_d) + ' -t '+' '.join(args.to) + ' -s '+args.from_date + ' -e '+args.to_date
-    request = '../scrapper.js '+args_req
+    request = '../scraper.js '+args_req
     print(request)
     result = execute_js(request)
     if result:

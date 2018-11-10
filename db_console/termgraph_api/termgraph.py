@@ -128,7 +128,6 @@ def init_args():
             sys.exit(2)'''
 
     args = vars(parser.parse_args(['frank.lu']))
-    print(args)
     return args
 
 def draw_graph(labels, data, args=''):

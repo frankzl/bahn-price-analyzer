@@ -4,19 +4,26 @@ from termgraph_api.termgraph import *
 import matplotlib.pyplot as plt
 import datetime
 
-df = pd.read_csv("data.csv")
 
-#print(df.head(2))
+def analyze(filename):
+    df = pd.read_csv(filename)
 
-df['departure_time'] = pd.to_datetime(df['departure_time'])
+    #print(df.head(2))
 
-#df[0] = str(datetime.date(int(df[0]), int(df[1]), int(df[2])))
-#print(df.head(2))
+    df['departure_time'] = pd.to_datetime(df['departure_time'])
 
-grouped = df.groupby(df['date']).min()
+    #df[0] = str(datetime.date(int(df[0]), int(df[1]), int(df[2])))
+    #print(df.head(2))
 
-print(grouped)
+    grouped = df.groupby(df['date']).min()
 
+    print('Ticket Prices:\n')
 
-#plt.plot(grouped['departure_time'], grouped['price'])
-#plt.show()s
+    draw_graph(list(grouped['departure_time']), list(grouped['price']))
+
+    print('\n')
+    #plt.show()s
+
+    if __name__ is '__main__':
+        print('here')
+        analyze('data.csv')

@@ -1,5 +1,5 @@
 import pandas as pd
-from termgraph-api.termgraph.termgraph import *
+from termgraph_api.termgraph import *
 
 import matplotlib.pyplot as plt
 import datetime
@@ -19,4 +19,4 @@ print(grouped)
 
 
 #plt.plot(grouped['departure_time'], grouped['price'])
-#plt.show()
+#plt.show()s

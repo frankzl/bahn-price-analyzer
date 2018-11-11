@@ -70,6 +70,9 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
         .then((routes) => {
             // console.log(inspect(routes, {depth: null}))
             routes = routes.map( (route) => {
+                if(route.price.name == "Super Sparpreis IC Bus"){
+                    return {}
+                }
                 return {
                     date: dateToInt(from_date),
                     departure_time: route.legs[0].departure,

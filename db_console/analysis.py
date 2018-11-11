@@ -5,13 +5,12 @@ import sys
 from pprint import pprint
 
 def custom_min(data):
-    print("-----")
+    #print("-----")
     idx = data["price"].idxmin()
-    print(data.loc[idx])
+    #print(data.loc[idx])
     return data.loc[idx]
 
 def analyze(filename):
-    filename = 'data.csv'
     df = pd.read_csv(filename)
     base_url = 'https://link.bahn.guru/?journey='
     url_end = '&bc=0&class=2'
@@ -26,13 +25,13 @@ def analyze(filename):
         new_table = df[df['date'] == d]
         unique_price = min(new_table.price.unique())
         new_table = new_table[new_table['price'] == unique_price]
-        print(new_table)
+        #print(new_table)
         grouped = grouped.append(new_table)
 
-    print(grouped)
+    #print(grouped)
 
     url_list = list(grouped['fulltxt'])
-    pprint(grouped['fulltxt'])
+    #pprint(grouped['fulltxt'])
     print('Ticket Prices:\n')
     dep_time_t = list(grouped['departure_time'])
     dep_time = []
@@ -53,7 +52,6 @@ def analyze(filename):
             redir = url_list[ind]
             url = base_url+redir+url_end
             print('opening db.de in new tab...')
-            print(url_list)
             webbrowser.open_new_tab(url)
         except Exception as e:
             print('Invalid index entered. Exiting.')

@@ -16,7 +16,7 @@ def analyze(filename):
     url_end = '&bc=0&class=2'
 
     df['departure_time'] = pd.to_datetime(df['departure_time'])
-    # grouped = df.groupby(df['date']).min()
+    #grouped = df.groupby(df['date']).min()
     #grouped = df.groupby( df['date']).apply(custom_min)
     # aaFind Unique Values
     unique_dates = df.date.unique()
@@ -27,7 +27,8 @@ def analyze(filename):
         new_table = new_table[new_table['price'] == unique_price]
         #print(new_table)
         grouped = grouped.append(new_table)
-
+    
+    
     #print(grouped)
 
     url_list = list(grouped['fulltxt'])
@@ -44,7 +45,7 @@ def analyze(filename):
     print('\n')
 
     print('Type index number to book or -1 to exit: ')
-    ind = int(input())
+    ind = int(input())-1
     if ind is -1:
         sys.exit()
     else:

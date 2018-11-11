@@ -70,9 +70,6 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
         .then((routes) => {
             // console.log(inspect(routes, {depth: null}))
             routes = routes.map( (route) => {
-                if(route.price.name == "Super Sparpreis IC Bus"){
-                    return {}
-                }
                 return {
                     date: dateToInt(from_date),
                     departure_time: route.legs[0].departure,
@@ -83,6 +80,8 @@ const getData = function ( from_id, to_id, from_date, to_date, prev_routes){
                     fulltxt: encodeURI(JSON.stringify(route))
                 }
             })
+            routes = routes.filter( (route) => !route.tickettype.includes("Bus"))
+
             const tomorrow = from_date;
             tomorrow.setDate(tomorrow.getDate() + 1);
             getData( from_id, to_id, tomorrow, to_date, prev_routes.concat(routes));

@@ -14,4 +14,5 @@ if __name__ == "__main__":
     
     command = "python "+ path +"/db_info.py -f "+ departure + " -t " + arrival + " -fd " + from_date + " -td " + to_date
 
+    os.system(command)
     print(command)

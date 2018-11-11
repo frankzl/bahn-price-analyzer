@@ -15,7 +15,7 @@ def analyze(filename):
     base_url = 'https://link.bahn.guru/?journey='
     url_end = '&bc=0&class=2'
 
-    df['departure_time'] = pd.to_datetime(df['departure_time'])
+    df['departure_time'] = pd.to_datetime(df['departure_time'])+pd.Timedelta(hours=1)
     #grouped = df.groupby(df['date']).min()
     #grouped = df.groupby( df['date']).apply(custom_min)
     # aaFind Unique Values

@@ -45,7 +45,7 @@ const writeDict = ( records ) => {
         });
 }
 const dateToInt = function(date){
-    const day = date.getDate()
+    const day = date.getDate()-1
         const month = date.getMonth() + 1
         const year = date.getFullYear()
 

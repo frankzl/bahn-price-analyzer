@@ -27,7 +27,7 @@ def send_request(args):
     args_req =     args = '-f '+get_station_id(' '.join(args.from_d)) + ' -t '+get_station_id(' '.join(args.to)) + ' -s '+args.from_date + ' -e '+args.to_date
     script = (os.path.dirname(os.path.realpath(__file__)) + "/../scraper.js")
     request = script + ' '+args_req
-    print(request)
+    #print(request)
     result = execute_js(request)
     #result = True
     if result:

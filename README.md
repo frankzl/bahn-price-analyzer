@@ -3,6 +3,13 @@ Analyzing the prices of the Deutsche Bahn (based on project [juliuste/db-prices]
 
 Small terminal application for the given API.
 
+# Requirements
+1. [numpy 1.15.2](https://pypi.org/project/numpy/) 
+2. [colorama 0.3.9](https://github.com/tartley/colorama)
+3. [pandas v0.23.4](https://pypi.org/project/pandas/)
+4. [Naked v0.1.31](https://github.com/chrissimpkins/naked.git)
+
+
 # Getting started
 clone the directory and run 
 1. `npm install`
@@ -32,4 +39,10 @@ column names: date, hour, departure_time, arrival_time, stops, price, ticket_typ
 
 departure and arrival format:
 '2017-06-05T08:53:00.000Z'
+
+# Special Thanks
+1. [Termgraph](https://github.com/mkaz/termgraph) by [makz](https://github.com/mkaz) for the amazingly simple terminal graph api.
+2. [bd-prices](https://github.com/juliuste/db-prices) by [juliuste](https://github.com/juliuste) for the db-price api which lets us fetch the ticket fares!
+3. [Naked](https://github.com/chrissimpkins/naked.git) by [chrissimpkins](https://github.com/chrissimpkins) for the awesome library which lets us call our node script with ease!  
+
 

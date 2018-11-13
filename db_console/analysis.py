@@ -44,7 +44,7 @@ def analyze(filename):
 
     print('\n')
 
-    print('Type index number to book or -1 to exit: ')
+    print('Type index number to book or 0 to exit: ')
     ind = int(input())-1
     if ind is -1:
         sys.exit()

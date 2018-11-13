@@ -11,6 +11,9 @@ from analysis import *
 import pandas as pd
 import sys
 import os
+import readline
+from StationsCompleter import *
+
 
 #comment
 def get_station_id(station_name):
@@ -35,7 +38,7 @@ def send_request(args):
     else:
         return None
 
-if __name__ == "__main__":
+def parse_and_run(args=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--from_d', '-f', help='From station', nargs='+', required = True)
     parser.add_argument('--to', '-t', help='To station', nargs='+', required=True)
@@ -52,5 +55,8 @@ if __name__ == "__main__":
         result = analyze(response)
     else:
         print('Error fetching Data...')
+
+if __name__ == "__main__":
+    parse_and_run()
+
     
-#

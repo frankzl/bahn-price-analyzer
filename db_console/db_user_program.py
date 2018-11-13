@@ -1,6 +1,14 @@
 import os
+import pandas as pd
+import readline
+from StationsCompleter import *
 
 if __name__ == "__main__":
+
+    stations = pd.read_csv('stations.csv').values
+    completer = StationsCompleter(stations.T[0])
+    readline.set_completer(completer.complete)
+    readline.parse_and_bind('tab: complete')
 
     departure = input("Start Station:\t")
     arrival = input("End Station:\t")

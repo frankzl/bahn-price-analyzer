@@ -8,6 +8,7 @@ Small terminal application for the given API.
 2. [colorama 0.3.9](https://github.com/tartley/colorama)
 3. [pandas v0.23.4](https://pypi.org/project/pandas/)
 4. [Naked v0.1.31](https://github.com/chrissimpkins/naked.git)
+5. [readline](https://pypi.org/project/readline/)
 
 
 # Getting started

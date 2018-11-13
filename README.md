@@ -43,7 +43,7 @@ departure and arrival format:
 
 # Special Thanks
 1. [Termgraph](https://github.com/mkaz/termgraph) by [makz](https://github.com/mkaz) for the amazingly simple terminal graph api.
-2. [bd-prices](https://github.com/juliuste/db-prices) by [juliuste](https://github.com/juliuste) for the db-price api which lets us fetch the ticket fares!
+2. [db-prices](https://github.com/juliuste/db-prices) by [juliuste](https://github.com/juliuste) for the db-price api which lets us fetch the ticket fares!
 3. [Naked](https://github.com/chrissimpkins/naked.git) by [chrissimpkins](https://github.com/chrissimpkins) for the awesome library which lets us call our node script with ease!  
 
 

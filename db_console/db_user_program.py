@@ -14,6 +14,7 @@ if __name__ == "__main__":
         stations = pd.read_csv(path + '/stations.csv').values
         completer = StationsCompleter(stations.T[0])
         readline.set_completer(completer.complete)
+        readline.set_completer_delims('')
         readline.parse_and_bind('tab: complete')
 
     departure = input("Start Station:\t")

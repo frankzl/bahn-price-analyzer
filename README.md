@@ -4,6 +4,8 @@ Analyzing the prices of the Deutsche Bahn (based on project [juliuste/db-prices]
 Small terminal application for the given API.
 
 # Getting started
+**You need: npm package manager and pip installer**
+
 ### Linux systems
 0. `git clone git@github.com:frankzl/bahn-price-analyzer.git`
 1. run `setup.sh`

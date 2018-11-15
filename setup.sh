@@ -1,8 +1,28 @@
 #!/bin/bash
 
-SCRIPT=$(readlink -f "$0")
+INPM=$(command -v npm)
+IPIP=$(command -v pip)
+IPIP3=$(command -v pip3)
 
+if [ -z "$IPIP" ];
+then
+    echo "okay.. you dont have pip huh.. we can still do this.."
+    if [ -z "$IPIP3" ];
+    then
+        echo "okay i give up, you also dont have pip3.. its over"
+        exit 1
+    fi
+fi
+if [ -z "$INPM" ];
+then
+    echo "dude, you need to install npm first .."
+    exit 1
+fi
+
+
+SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
+
 echo $SCRIPTPATH
 
 rm -f .config

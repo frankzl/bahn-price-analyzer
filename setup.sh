@@ -5,7 +5,7 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 echo $SCRIPTPATH
 
-# rm -f .config
+rm -f .config
 touch .config
 
 echo "alias bahn=\"python $SCRIPTPATH/db_console/db_user_program.py\"" >> .config
@@ -16,3 +16,4 @@ echo "source $SCRIPTPATH/.config" >> $HOME/.zshrc
 
 source $SCRIPTPATH/.config
 
+npm install

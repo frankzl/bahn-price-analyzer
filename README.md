@@ -3,18 +3,30 @@ Analyzing the prices of the Deutsche Bahn (based on project [juliuste/db-prices]
 
 Small terminal application for the given API.
 
+# Getting started
+### Linux systems
+0. `git clone git@github.com:frankzl/bahn-price-analyzer.git`
+1. run `setup.sh`
+2. enjoy! :)
+
+This will setup aliases in your system, allowing you to use short commands:
+- `bahn` to run the user program
+- `bahn_info -f "Oldenburg (Oldb) Hbf" -t München Hbf -fd 2018-12-04 -td 2018-12-07` to query
+
+Not sure if this works on macOS.. maybe someone can try it out
+
+### Otherwise:
+0. `git clone git@github.com:frankzl/bahn-price-analyzer.git` 
+1. `npm install`
+2. `pip install -r db_console/requirements.txt`
+3. enjoy! :)
+
 # Requirements
 1. [numpy 1.15.2](https://pypi.org/project/numpy/) 
 2. [colorama 0.3.9](https://github.com/tartley/colorama)
 3. [pandas v0.23.4](https://pypi.org/project/pandas/)
 4. [Naked v0.1.31](https://github.com/chrissimpkins/naked.git)
 5. [readline](https://pypi.org/project/readline/)
-
-
-# Getting started
-clone the directory and run 
-1. `npm install`
-2. setup aliases to run command from everywhere (WIP)
 
 # Example commands
 At the moment you can only specify the place by giving the exact station name, which can be found inside `stations.csv`. (still in progress, maybe we'll fix it with fuzzy matching)

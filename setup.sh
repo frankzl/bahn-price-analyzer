@@ -17,3 +17,5 @@ echo "source $SCRIPTPATH/.config" >> $HOME/.zshrc
 source $SCRIPTPATH/.config
 
 npm install
+
+pip install -r db_console/requirements.txt

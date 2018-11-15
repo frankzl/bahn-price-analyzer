@@ -17,8 +17,8 @@ if __name__ == "__main__":
         readline.set_completer_delims('')
         readline.parse_and_bind('tab: complete')
 
-    departure = input("Start Station:\t")
-    arrival = input("End Station:\t")
+    departure = input("\nStart Station:\t")
+    arrival = input("\nEnd Station:\t")
 
     if 'Windoes' not in platform.platform():
         readline.parse_and_bind('set disable-completion on')

@@ -28,6 +28,11 @@ At the moment you can only specify the place by giving the exact station name, w
 `python db_console/db_user_program.py`
 ![demo screenshot](demo/screenshot02.png)
 
+### Added autocomplete function!
+Use tab to run autocompletion and show suggestions
+
+![demo screenshot](demo/autocomplete.png)
+
 # Node script
 execute with `node scrapper.js -f from_station -t to_station -s start_date -e end_date`
  will write data into file: 
